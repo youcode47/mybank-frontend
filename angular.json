@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "mybank-frontend": "apps/mybank-frontend",
+    "mybank-frontend-e2e": "apps/mybank-frontend-e2e"
+  }
+}

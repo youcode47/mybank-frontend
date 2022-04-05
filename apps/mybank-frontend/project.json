@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/mybank-frontend",
+  "sourceRoot": "apps/mybank-frontend/src",
+  "prefix": "io.yorosoft.mybank",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mybank-frontend",
+        "index": "apps/mybank-frontend/src/index.html",
+        "main": "apps/mybank-frontend/src/main.ts",
+        "polyfills": "apps/mybank-frontend/src/polyfills.ts",
+        "tsConfig": "apps/mybank-frontend/tsconfig.app.json",
+        "assets": [
+          "apps/mybank-frontend/src/favicon.ico",
+          "apps/mybank-frontend/src/assets"
+        ],
+        "styles": ["apps/mybank-frontend/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/mybank-frontend/src/environments/environment.ts",
+              "with": "apps/mybank-frontend/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "mybank-frontend:build:production"
+        },
+        "development": {
+          "browserTarget": "mybank-frontend:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "mybank-frontend:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/mybank-frontend/src/**/*.ts",
+          "apps/mybank-frontend/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/mybank-frontend"],
+      "options": {
+        "jestConfig": "apps/mybank-frontend/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
