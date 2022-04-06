@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/mybank-frontend",
         "index": "apps/mybank-frontend/src/index.html",
@@ -17,7 +19,10 @@
           "apps/mybank-frontend/src/favicon.ico",
           "apps/mybank-frontend/src/assets"
         ],
-        "styles": ["apps/mybank-frontend/src/styles.css"],
+        "styles": [
+          "apps/mybank-frontend/src/custom-theme.scss",
+          "apps/mybank-frontend/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -82,7 +87,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/mybank-frontend"],
+      "outputs": [
+        "coverage/apps/mybank-frontend"
+      ],
       "options": {
         "jestConfig": "apps/mybank-frontend/jest.config.js",
         "passWithNoTests": true
