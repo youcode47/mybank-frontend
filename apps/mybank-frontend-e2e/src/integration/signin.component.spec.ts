@@ -22,4 +22,19 @@ describe("SignIn Component", () => {
   it("SignIn Component input placeholder should contain Mot de passe", () => {
     cy.get('[data-cy="sg-input-password"]').should('have.attr', 'placeholder', 'Mot de passe')
   });
+
+  it("SignIn Component Question text should contain Pas de compte ?", () => {
+    cy.get('[data-cy="sg-question"]').should('have.text', 'Pas de compte ?')
+  });
+
+  it("SignIn Component Button Connexion text should contain Creer un compte", () => {
+    cy.get('[data-cy="sg-link-create-account"]').should('have.text', 'Creer un compte')
+  });
+
+  it("Should show SignUp Component when click on link Creer un compte", () => {
+    cy.get('[data-cy="sg-link-create-account"]')
+      .click()
+
+    cy.get('[data-cy="sgup-title"]').should('have.text', 'Creer un compte');
+  });
 });

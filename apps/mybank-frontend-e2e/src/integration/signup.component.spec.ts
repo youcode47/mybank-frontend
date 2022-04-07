@@ -39,7 +39,14 @@ describe("SignUp Component", () => {
     cy.get('[data-cy="sgup-question"]').should('have.text', 'Vous avez déjà un compte ?')
   });
 
-  it("SignUp Component Button Connexion text should contain Se connecter ?", () => {
+  it("SignUp Component Button Connexion text should contain Se connecter", () => {
     cy.get('[data-cy="sgup-btn-connect"]').should('have.text', 'Se connecter')
+  });
+
+  it("Should show SignIn Component when click on link Se connecter", () => {
+    cy.get('[data-cy="sgup-btn-connect"]')
+      .click()
+
+    cy.get('[data-cy="sg-title"]').should('have.text', 'Connectez-vous à un compte');
   });
 });
