@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
-import { HeaderDesktopComponent } from './header-desktop/header-desktop.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { HeaderDesktopComponent } from './header-desktop/header-desktop.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
   ]
 })
 export class DashboardModule { }

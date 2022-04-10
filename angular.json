@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "analytics": "d05e2e3a-46fd-4e03-864c-e8a7eeaa9429"
+  },
   "version": 2,
   "projects": {
     "mybank-frontend": "apps/mybank-frontend",
